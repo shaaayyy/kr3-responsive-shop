@@ -430,6 +430,37 @@ function save(){try{localStorage.setItem('freq-cart',JSON.stringify(cart))}catch
 function renderCart(){updateDeliveryField();const count=Object.values(cart).reduce((s,q)=>s+q,0);document.querySelectorAll('.cart-count').forEach(x=>x.textContent=count);const rows=Object.entries(cart).map(([id,q])=>{const p=find(id);return `<div class="cart-row"><div><strong>${p[0]}</strong><small>${itemPrice(p)} × ${q}</small></div><div class="cart-row__controls"><button class="icon-button" data-minus="${id}" aria-label="Уменьшить количество ${p[0]}">−</button><span>${q}</span><button class="icon-button" data-plus="${id}" aria-label="Увеличить количество ${p[0]}">+</button><button class="icon-button" data-remove="${id}" aria-label="Удалить ${p[0]}">×</button></div></div>`}).join('')||'<p class="empty-state">Ваша корзина пуста.<br>Выберите аппаратуру или плагины в каталоге.</p>';document.querySelector('#cart-items').innerHTML=rows;document.querySelector('#cart-total').textContent=money(total());const checkout=document.querySelector('#checkout');checkout.hidden=!count;const order=document.querySelector('#order-items');if(order)order.innerHTML=rows+`<div class="modal__total">Итого <strong>${money(total())}</strong></div>`;}
 function add(id){if(!find(id))return;if((cart[id]||0)>=99){toast('Максимум 99 единиц');return}cart[id]=(cart[id]||0)+1;save();animateFeedback(document.querySelector('.cart-count'));toast(find(id)[0]+' добавлен в корзину')}
 const dialog=document.querySelector('#cart-dialog');document.addEventListener('click',e=>{const addButton=e.target.closest('[data-add]');if(addButton)add(addButton.dataset.add);if(e.target.closest('[data-cart]'))dialog.showModal();if(e.target.closest('[data-close]'))dialog.close();for(const action of ['minus','plus','remove']){const b=e.target.closest('[data-'+action+']');if(!b)continue;const id=b.dataset[action];if(action==='plus'){add(id);return}if(action==='remove'||cart[id]<=1)delete cart[id];else cart[id]--;save()}});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+const accountDialog = document.querySelector('#account-dialog');
+if (accountDialog) {
+  const accountForm = accountDialog.querySelector('form');
+  const accountName = accountForm.elements.namedItem('name');
+  const accountEmail = accountForm.elements.namedItem('email');
+  const accountStatus = accountForm.querySelector('[role="status"]');
+  const accountStorageKey = 'freq-profile';
+
+  document.querySelector('[data-account]').addEventListener('click', () => {
+    let profile;
+    try { profile = JSON.parse(localStorage.getItem(accountStorageKey)); } catch {}
+    accountName.value = typeof profile?.name === 'string' ? profile.name : '';
+    accountEmail.value = typeof profile?.email === 'string' ? profile.email : '';
+    accountStatus.textContent = '';
+    accountDialog.showModal();
+  });
+  accountDialog.querySelector('[data-account-close]').addEventListener('click', () => accountDialog.close());
+  accountForm.addEventListener('input', () => { accountStatus.textContent = ''; });
+  accountForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const profile = { name: accountName.value.trim(), email: accountEmail.value.trim() };
+    try {
+      if (profile.name || profile.email) localStorage.setItem(accountStorageKey, JSON.stringify(profile));
+      else localStorage.removeItem(accountStorageKey);
+      accountStatus.textContent = profile.name || profile.email ? 'Профиль сохранён.' : 'Профиль очищен.';
+    } catch {
+      accountStatus.textContent = 'Не удалось сохранить профиль в этом браузере.';
+    }
+  });
+}
+
 const menu=document.querySelector('.menu-button');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',open);document.querySelector('.nav').classList.toggle('nav--open',open)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.setAttribute('aria-expanded','false');document.querySelector('.nav').classList.remove('nav--open')}});
 const grid = document.querySelector('#catalog-grid');
 if (grid) {

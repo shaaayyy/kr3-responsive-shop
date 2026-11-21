@@ -80,3 +80,16 @@ html{scroll-padding-top:165px}
   .footer__grid { gap: 20px; }
   .footer__contacts { margin-top: 0; }
 }
+
+@media (max-width: 599px) {
+  .account-button { justify-content: center; width: 44px; padding-inline: 0; }
+  .account-button__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

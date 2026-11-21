@@ -16,10 +16,31 @@
   letter-spacing: -.045em;
 }
 .header-brand small{display:block;letter-spacing:.11em;font-size:8px;margin-top:10px;font-weight:bold}
-.header__actions{display:flex;gap:18px;align-items:center;margin-left:auto}
+.header__actions{display:flex;gap:8px;align-items:center;margin-left:auto}
 
-.header .cart-button{border:1px solid #51465f;border-radius:30px;color:var(--accent);padding:10px 17px;background:none;font-size:12px;min-height:44px}
-.header .cart-button:hover{background:#30283e}
+.header .cart-button,
+.account-button{border:1px solid #51465f;border-radius:30px;color:var(--accent);padding:10px 17px;background:none;font-size:12px;min-height:44px}
+.header .cart-button:hover,
+.account-button:hover{background:#30283e}
+.account-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.account-button__icon {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  width: 16px;
+}
+.account-button__icon::before,
+.account-button__icon::after {
+  content: "";
+  border: 1.5px solid currentColor;
+}
+.account-button__icon::before { width: 7px; height: 7px; border-radius: 50%; }
+.account-button__icon::after { width: 12px; height: 6px; border-radius: 5px 5px 2px 2px; }
 .header .cart-count{background:var(--accent);color:var(--bg)}
 .header .menu-button:hover{background:#30283e}
 .header .menu-button{border:1px solid #51465f;border-radius:12px;padding:8px 12px;min-height:44px;margin:0;color:var(--accent);background:transparent;font-size:20px}
@@ -786,7 +807,7 @@ main { flex: 1 0 auto; }
 @media (min-width: 768px) {
   .contact-overview__grid { grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr); }
   .contact-overview--stacked .contact-feedback__channels {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -836,3 +857,15 @@ main { flex: 1 0 auto; }
 .footer__grid .social-links a:hover,
 .social-links a:hover { color: var(--text); }
 main:focus-visible { outline-offset: -2px; }
+
+.account-dialog > p { margin-top: 8px; font-size: 14px; }
+.account-form {
+  display: grid;
+  gap: 8px;
+  margin-block: 18px;
+}
+.account-form label { font-size: 14px; }
+.account-form input + label { margin-top: 5px; }
+.account-form .button { margin-top: 8px; }
+.account-form__status { color: var(--accent); font-size: 13px; }
+.account-form__status:empty { margin-top: -8px; }
