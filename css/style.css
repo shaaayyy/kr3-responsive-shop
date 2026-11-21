@@ -8,7 +8,13 @@
 .header-brand{display:inline-flex;align-items:center;gap:10px;min-width:0}
 .header-brand:hover{color:var(--text)}
 .header-brand__icon{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#30283e;border:1px solid #51465f;color:var(--accent);flex-shrink:0}
-.header-brand b{display:block;font-size:27px;line-height:1.1;letter-spacing:-1.8px}
+.brand-name {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
 .header-brand small{display:block;letter-spacing:.11em;font-size:8px;margin-top:10px;font-weight:bold}
 .header__actions{display:flex;gap:18px;align-items:center;margin-left:auto}
 
@@ -772,10 +778,16 @@ main { flex: 1 0 auto; }
 }
 .contact-feedback__hours h3 { font-size: 17px; margin-bottom: 6px; }
 .contact-feedback__hours p { font-size: 14px; }
-.contact-faq .faq { max-width: 800px; }
+.contact-overview--stacked .contact-overview__grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+}
 
 @media (min-width: 768px) {
   .contact-overview__grid { grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr); }
+  .contact-overview--stacked .contact-feedback__channels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .home-contact-title { font-size: clamp(30px, 4.6vw, 57px); }
@@ -794,11 +806,6 @@ main { flex: 1 0 auto; }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--text);
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: -.045em;
 }
 .footer-brand .header-brand__icon { width: 40px; height: 40px; }
 .footer-brand .header-brand__icon svg { width: 24px; height: 24px; }
@@ -809,7 +816,7 @@ main { flex: 1 0 auto; }
   border-top: 1px solid var(--line);
 }
 .footer__socials h2 { margin-bottom: 8px; }
-.footer__social-list {
+.social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 7px 15px;
@@ -819,5 +826,13 @@ main { flex: 1 0 auto; }
   color: var(--text);
   font-size: 13px;
 }
-.footer__social-list span { color: var(--muted); overflow-wrap: anywhere; }
+.footer__grid .social-links a,
+.social-links a {
+  color: var(--accent);
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer__grid .social-links a:hover,
+.social-links a:hover { color: var(--text); }
 main:focus-visible { outline-offset: -2px; }
