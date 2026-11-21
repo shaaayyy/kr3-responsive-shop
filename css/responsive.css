@@ -70,40 +70,13 @@ html{scroll-padding-top:165px}
 }
 
 
-/* Длина внешней страницы задана в экранах. Длинное содержимое
-   каталога и раскрытые блоки остаются доступными в основной области. */
 @media screen {
-  body {
-    --screen-count: 2;
-    height: calc(100svh * var(--screen-count));
-  }
-  body:has(.page-main--home) { --screen-count: 3; }
-  body > .header,
-  body > .footer { flex: 0 0 auto; }
-  body > main {
-    flex: 1 1 0;
-    min-height: 0;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scroll-padding-block: 14px;
-  }
-  main .filters,
-  main .order-summary { top: 16px; }
+  body { min-height: 200svh; }
+  body:has(.page-main--home) { min-height: 300svh; }
   .page-main--home #popular,
   .page-main--home #faq { min-height: 0; }
 }
 @media screen and (max-width: 767px) {
   .footer__grid { gap: 20px; }
   .footer__contacts { margin-top: 0; }
-}
-
-@media screen and (max-height: 430px) {
-  body {
-    height: auto;
-    min-height: calc(100svh * var(--screen-count));
-  }
-  body > main {
-    flex-basis: auto;
-    overflow: visible;
-  }
 }
