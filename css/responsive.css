@@ -10,7 +10,7 @@ img,video{max-width:100%;height:auto}main,.catalog-layout>*,.order-layout>*,.pro
 @media print{.header,.announcement,.footer,.cart-button,.button,.toast,.filters{display:none}body{background:white;color:black}.container{width:100%}p{color:#333}.products-grid{grid-template-columns:repeat(2,1fr)}}
 /* Шапка/футер после обновления: Mobile First, без Bootstrap. */
 html{scroll-padding-top:165px}
-@media(min-width:768px){.footer__grid{grid-template-columns:5fr 3fr 4fr;gap:35px}.header-search{flex:1 1 100%}.footer .footer__slogan{font-size:25px}}
+@media(min-width:768px){.footer__grid{grid-template-columns:5fr 3fr 4fr;gap:35px}.header-search{flex:1 1 100%}}
 @media(min-width:1024px){.header__inner{min-height:88px}.header__navinner{flex-wrap:nowrap;gap:28px}.header-search{flex:1 1 390px;max-width:495px}.header .nav,.header .nav--open{display:flex;flex-direction:row;width:auto;order:initial;padding:0;gap:2px;margin-left:auto}.header .nav__link{padding:10px 12px;font-size:12px}.header .nav__link--active::after{display:none}.header .menu-button{display:none}.filters,.order-summary{top:172px}.footer__grid{gap:50px}}
 @media(min-width:1200px){.header .nav__link{font-size:13px;padding:10px 15px}.header__navinner{gap:45px}}
 @media(max-width:479px){.header__inner{min-height:78px;gap:9px}.header-brand{gap:7px}.header-brand__icon{width:35px;height:35px}.header-brand__icon svg{width:22px;height:22px}.header-brand b{font-size:24px}.header-brand small{font-size:6px;letter-spacing:.05em;max-width:135px;margin-top:5px}.header .cart-button{padding:8px 10px;font-size:10px}.header .cart-count{min-width:18px;height:18px;font-size:10px;margin-left:3px}.header .menu-button{font-size:17px;padding:6px 10px}.header__navinner{padding-block:8px;gap:12px}}
@@ -21,10 +21,6 @@ html{scroll-padding-top:165px}
   .location { grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); align-items: center; }
 }
 @media (min-width: 1024px) {
-  .page-main--about,
-  .page-main--catalog,
-  .page-main--contacts { min-height: calc(200svh - 485px); }
-  .page-main--home { min-height: calc(300svh - 485px); }
   .page-main--home .hero { min-height: 66svh; align-items: center; }
   .page-main--home #popular { min-height: 68svh; display: grid; align-content: center; }
   .page-main--home #faq { min-height: 49svh; display: grid; align-content: center; }
@@ -71,4 +67,43 @@ html{scroll-padding-top:165px}
 }
 @media (max-width: 767px) {
   .breadcrumbs { padding-block: 19px; }
+}
+
+
+/* Длина внешней страницы задана в экранах. Длинное содержимое
+   каталога и раскрытые блоки остаются доступными в основной области. */
+@media screen {
+  body {
+    --screen-count: 2;
+    height: calc(100svh * var(--screen-count));
+  }
+  body:has(.page-main--home) { --screen-count: 3; }
+  body > .header,
+  body > .footer { flex: 0 0 auto; }
+  body > main {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scroll-padding-block: 14px;
+  }
+  main .filters,
+  main .order-summary { top: 16px; }
+  .page-main--home #popular,
+  .page-main--home #faq { min-height: 0; }
+}
+@media screen and (max-width: 767px) {
+  .footer__grid { gap: 20px; }
+  .footer__contacts { margin-top: 0; }
+}
+
+@media screen and (max-height: 430px) {
+  body {
+    height: auto;
+    min-height: calc(100svh * var(--screen-count));
+  }
+  body > main {
+    flex-basis: auto;
+    overflow: visible;
+  }
 }
