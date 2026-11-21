@@ -781,7 +781,13 @@ if (accountDialog?.querySelector('#account-password')) {
 
   function showAccount() {
     const account = readAccount();
-    const signedIn = Boolean(account && sessionStorage.getItem(sessionKey) === account.salt.join(','));
+    const accountId = account?.salt.join(',');
+    let session = localStorage.getItem(sessionKey);
+    if (session === null && accountId && sessionStorage.getItem(sessionKey) === accountId) {
+      localStorage.setItem(sessionKey, accountId);
+      session = accountId;
+    }
+    const signedIn = Boolean(accountId && session === accountId);
     form.hidden = signedIn;
     profilePanel.hidden = !signedIn;
     description.hidden = signedIn;
@@ -797,6 +803,7 @@ if (accountDialog?.querySelector('#account-password')) {
 
     emailField.hidden = Boolean(account);
     email.disabled = Boolean(account);
+    login.value = account?.login ?? '';
     password.autocomplete = account ? 'current-password' : 'new-password';
     submit.textContent = account ? 'Войти' : 'Зарегистрироваться';
     submit.disabled = submitting;
@@ -837,11 +844,18 @@ if (accountDialog?.querySelector('#account-password')) {
   close.addEventListener('click', () => accountDialog.close());
   accountDialog.addEventListener('close', () => { password.value = ''; });
   accountDialog.querySelector('[data-account-logout]').addEventListener('click', () => {
+    // An explicit sign-out also invalidates sessions from the earlier tab-only version.
+    localStorage.setItem(sessionKey, '');
     sessionStorage.removeItem(sessionKey);
     showAccount();
     login.focus();
   });
   window.addEventListener('storage', event => {
+    if (event.key === sessionKey && accountDialog.open) {
+      const wasSignedIn = !profilePanel.hidden;
+      showAccount();
+      if (wasSignedIn && profilePanel.hidden) login.focus();
+    }
     if ((event.key === 'freq-favorites' || event.key === null) && !profilePanel.hidden) renderAccountFavorites();
   });
 
@@ -872,14 +886,14 @@ if (accountDialog?.querySelector('#account-password')) {
           return;
         }
         localStorage.setItem(accountKey, JSON.stringify({ login: enteredLogin, email: enteredEmail, salt, verifier }));
-        sessionStorage.setItem(sessionKey, salt.join(','));
+        localStorage.setItem(sessionKey, salt.join(','));
       } else {
         if (!existing || enteredLogin !== existing.login
             || await passwordVerifier(enteredPassword, existing.salt) !== existing.verifier) {
           status.textContent = 'Проверьте логин и пароль.';
           return;
         }
-        sessionStorage.setItem(sessionKey, existing.salt.join(','));
+        localStorage.setItem(sessionKey, existing.salt.join(','));
       }
       showAccount();
       if (accountDialog.open) close.focus();
