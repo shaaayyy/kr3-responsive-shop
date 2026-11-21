@@ -790,7 +790,7 @@ main { flex: 1 0 auto; }
 }
 
 
-.footer-brand {
+.footer__grid a.footer-brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
