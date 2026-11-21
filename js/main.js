@@ -614,13 +614,25 @@ const form=document.querySelector('#order-form');if(form){form.addEventListener(
 // Переход к поиску в каталоге через обычную GET-форму работает и без JavaScript.
 
 const backToTop = document.querySelector('.back-to-top');
+const mainScrollArea = document.querySelector('main');
 function updateBackToTop() {
-  const distance = document.documentElement.scrollHeight - window.innerHeight;
-  const percent = distance > 0 ? Math.round(Math.min(1, Math.max(0, window.scrollY / distance)) * 100) : 0;
+  const pageDistance = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const mainDistance = Math.max(0, mainScrollArea.scrollHeight - mainScrollArea.clientHeight);
+  const distance = pageDistance + mainDistance;
+  const position = window.scrollY + mainScrollArea.scrollTop;
+  const percent = distance ? Math.round(Math.min(1, Math.max(0, position / distance)) * 100) : 0;
   backToTop.style.setProperty('--scroll-progress', percent + '%');
-  backToTop.hidden = window.scrollY < 240;
+  backToTop.hidden = position < 240;
 }
+backToTop.addEventListener('click', event => {
+  event.preventDefault();
+  const behavior = reducedMotion.matches ? 'instant' : 'smooth';
+  document.querySelector('.header-brand').focus({ preventScroll: true });
+  mainScrollArea.scrollTo({ top: 0, behavior });
+  window.scrollTo({ top: 0, behavior });
+});
 window.addEventListener('scroll', updateBackToTop, { passive: true });
+mainScrollArea.addEventListener('scroll', updateBackToTop, { passive: true });
 window.addEventListener('resize', updateBackToTop);
 updateBackToTop();
 
@@ -821,7 +833,7 @@ let pageExit;
 document.addEventListener('click', event => {
   if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey
       || event.altKey || event.shiftKey || reducedMotion.matches || !pageContent?.animate) return;
-  const link = event.target.closest('#navigation a, .section-tabs a, .footer__links a, .header-brand');
+  const link = event.target.closest('#navigation a, .section-tabs a, .footer__links a, .header-brand, .footer-brand');
   if (!link || link.hasAttribute('target') || link.hasAttribute('download')) return;
   const current = new URL(location.href);
   const next = new URL(link.href, current);
