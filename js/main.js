@@ -607,6 +607,7 @@ if (productName) {
   const specs = document.querySelector('#specs');
 
   if (!product) {
+    document.querySelector('meta[name="robots"]').content = 'noindex, follow';
     productName.textContent = 'Товар не найден';
     description.textContent = 'Вернитесь в каталог и выберите другой товар.';
     addButton.hidden = true;
@@ -620,6 +621,32 @@ if (productName) {
         ? 'Физический товар. Укажите город доставки в заявке.'
         : 'Цифровой товар. Лицензия через сайт не выдаётся.';
     document.title = name + ' — FREQ';
+    const productUrl = new URL(document.querySelector('meta[property="og:url"]').content);
+    productUrl.searchParams.set('id', id);
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = productUrl.href;
+    document.head.append(canonical);
+
+    const summary =
+      category === 'effect'
+        ? name +
+          ': эмуляция студийного оборудования. Аппаратный прототип — ' +
+          detail.prototype +
+          '.'
+        : name + ' — ' + desc + '. Характеристики и цена в каталоге FREQ.';
+    document.querySelector('meta[name="description"]').content = summary;
+    document.querySelector('meta[property="og:title"]').content = document.title;
+    document.querySelector('meta[property="og:description"]').content = summary;
+    document.querySelector('meta[property="og:url"]').content = productUrl.href;
+    const previewProduct = image ? product : find(items[0]);
+    document.querySelector('meta[property="og:image"]').content = new URL(
+      'images/' + previewProduct[9],
+      productUrl,
+    ).href;
+    document.querySelector('meta[property="og:image:alt"]').content =
+      PRODUCT_DETAILS[slug(previewProduct[0])].alt;
+
     productName.textContent = name;
     description.textContent = desc;
     document.querySelector('#product-price').textContent = itemPrice(product);
