@@ -797,8 +797,12 @@ main { flex: 1 0 auto; }
   border-top: 1px solid var(--line);
   margin-bottom: 22px;
 }
-.contact-feedback__hours h3 { font-size: 17px; margin-bottom: 6px; }
 .contact-feedback__hours p { font-size: 14px; }
+.contact-feedback__channels .contact-feedback__hours {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 .contact-overview--stacked .contact-overview__grid {
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(24px, 4vw, 48px);
@@ -808,6 +812,21 @@ main { flex: 1 0 auto; }
   .contact-overview__grid { grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr); }
   .contact-overview--stacked .contact-feedback__channels {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .contact-overview--stacked .contact-feedback__hours {
+    grid-area: 2 / 1 / auto / -1;
+    margin-top: 5px;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+  }
+  .contact-overview--stacked .contact-feedback__hours dt {
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .contact-overview--stacked .contact-feedback__hours dd {
+    color: var(--muted);
+    font-size: 14px;
   }
 }
 
