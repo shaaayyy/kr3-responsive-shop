@@ -232,7 +232,7 @@ const PRODUCTS = [
 ];
 const PRODUCT_DETAILS = {
   'korg-minilogue-xd': {
-    alt: 'Синтезатор Korg minilogue xd в чёрном корпусе, с клавиатурой и регуляторами на верхней панели',
+    alt: 'Чёрный синтезатор Korg minilogue xd показан под углом: впереди белые и чёрные клавиши, на наклонной панели видны ряды регуляторов и переключателей.',
     url: 'https://www.korg.com/us/products/synthesizers/minilogue_xd/',
     specs: [
       ['Звуковой движок', 'Гибридный'],
@@ -242,7 +242,7 @@ const PRODUCT_DETAILS = {
     ],
   },
   'arturia-minifreak': {
-    alt: 'Синтезатор Arturia MiniFreak с мини-клавиатурой и оранжевыми ручками управления',
+    alt: 'На передней панели Arturia MiniFreak над мини-клавиатурой расположены ползунки слева, оранжевые кнопки ближе к центру и ряды тёмных регуляторов справа.',
     url: 'https://www.arturia.com/products/hardware-synths/minifreak/details',
     specs: [
       ['Звуковой движок', 'Гибридный'],
@@ -252,7 +252,7 @@ const PRODUCT_DETAILS = {
     ],
   },
   'yamaha-reface-cs': {
-    alt: 'Синтезатор Yamaha reface CS в белом корпусе с мини-клавиатурой и рядом ползунков',
+    alt: 'Белый Yamaha reface CS показан сверху: над короткой клавиатурой проходит тёмная полоса с ползунками, по краям корпуса расположены решётки динамиков.',
     url: 'https://au.yamaha.com/en/musical-instruments/keyboards/explore/synth-chronology/modal/Modal-reface-cs.html',
     specs: [
       ['Звуковой движок', 'Цифровое аналоговое моделирование'],
@@ -262,7 +262,7 @@ const PRODUCT_DETAILS = {
     ],
   },
   'novation-bass-station-ii': {
-    alt: 'Синтезатор Novation Bass Station II с мини-клавиатурой и синей полосой над клавишами',
+    alt: 'Чёрный Novation Bass Station II показан спереди. Над мини-клавиатурой видна тонкая синяя полоса, выше — круглые ручки и кнопки на наклонной панели.',
     url: 'https://novationmusic.com/products/bass-station-ii',
     specs: [
       ['Звуковой движок', 'Аналоговый'],
@@ -272,7 +272,7 @@ const PRODUCT_DETAILS = {
     ],
   },
   'roland-juno-x': {
-    alt: 'Синтезатор Roland JUNO-X с клавиатурой и цветными секциями ползунков на панели управления',
+    alt: 'На Roland JUNO-X ряды ползунков разделены красной и синей разметкой. Под ними тянется клавиатура, а левее клавиш расположены органы управления.',
     url: 'https://www.roland.com/global/products/juno-x/',
     specs: [
       ['Звуковой движок', 'Цифровой ZEN-Core'],
@@ -282,7 +282,7 @@ const PRODUCT_DETAILS = {
     ],
   },
   'sequential-take-5': {
-    alt: 'Синтезатор Sequential Take 5 с клавиатурой и рядами круглых регуляторов на серой панели',
+    alt: 'Серый Sequential Take 5 показан спереди. Верхнюю панель занимают ряды круглых ручек, а слева над клавишами видна пара колёс управления.',
     url: 'https://sequential.com/hybrid-analog/take-5-compact-polysynth/',
     specs: [
       ['Звуковой движок', 'Аналоговый тракт с цифровыми эффектами'],
@@ -292,65 +292,65 @@ const PRODUCT_DETAILS = {
     ],
   },
   'cla-2a': {
-    alt: 'Компрессор Waves CLA-2A со светлой панелью, двумя крупными регуляторами и стрелочным индикатором',
+    alt: 'Светлая панель компрессора Waves CLA-2A стилизована под рэковый прибор: по центру жёлтый стрелочный индикатор, по сторонам две крупные ручки.',
     prototype: 'Teletronix LA-2A',
     url: 'https://www.waves.com/plugins/cla-2a-compressor-limiter',
   },
   'virtual-buss-compressors': {
-    alt: 'Три панели компрессоров Slate Digital Virtual Buss Compressors со стрелочными индикаторами',
+    alt: 'Три тёмных компрессора Slate Digital Virtual Buss Compressors расположены один над другим. У каждого свой ряд ручек и подсвеченные стрелочные индикаторы.',
     prototype: 'Шинный компрессор SSL 4000 в модели FG-Grey',
     url: 'https://slatedigital.com/virtual-buss-compressors/',
   },
   decapitator: {
-    alt: 'Плагин Soundtoys Decapitator с крупным стрелочным индикатором и регулятором Drive слева',
+    alt: 'Тёмная панель Soundtoys Decapitator в деревянной рамке: сверху крупный светлый стрелочный индикатор, слева ручка Drive, внизу ряд кнопок выбора стиля.',
     prototype: 'Ampex 350, Neve 1057 и Thermionic Culture Vulture',
     url: 'https://store.soundtoys.com/wp-content/uploads/Decapitator-Manual.pdf',
   },
   echoboy: {
-    alt: 'Плагин Soundtoys EchoBoy с зелёным дисплеем и отдельными блоками управления задержкой',
+    alt: 'На панели Soundtoys EchoBoy зелёная графическая шкала слева, секции с круглыми регуляторами и переключателями в центре и справа, по краям деревянная рамка.',
     prototype: 'Roland RE-201 Space Echo, Echoplex EP-3 и Ampex ATR-102',
     url: 'https://store.soundtoys.com/wp-content/uploads/EchoBoy-Manual.pdf',
   },
   'valhalla-delay': {
-    alt: 'Плагин Valhalla Delay с синими секциями и ручками параметров задержки',
+    alt: 'На чёрной панели Valhalla Delay параметры разбиты на ярко-синие блоки с круглыми ручками. Название плагина и его настройки видны над и под блоками.',
     prototype: 'Режим Space моделирует Roland RE-201 и RE-301',
     url: 'https://valhalladsp.com/shop/delay/valhalladelay/',
   },
   'cla-76': {
-    alt: 'Две панели компрессора Waves CLA-76, светлая Blue Stripe и тёмная Blackface, со стрелочными индикаторами',
+    alt: 'Два интерфейса Waves CLA-76 расположены друг над другом. Верхний светлый с синей полосой у стрелочного индикатора, нижний чёрный с таким же жёлтым индикатором.',
     prototype: '1176 в вариантах Blue Stripe и Blackface',
     url: 'https://www.waves.com/bundles/cla-classic-compressors',
   },
   'verbsuite-classics': {
-    alt: 'Ревербератор Slate Digital VerbSuite Classics с тёмной панелью и круглым регулятором в центре',
+    alt: 'Тёмная панель Slate Digital VerbSuite Classics расположена на синем фоне. В центре крупная серебристая ручка, вокруг — небольшие регуляторы и кнопки.',
     prototype: 'Студийные ревербераторы, в том числе Bricasti M7',
     url: 'https://docs.slatedigital.com/VSC/VerbSuite_Classics.html',
   },
   'virtual-tape-machines': {
-    alt: 'Панель Slate Digital Virtual Tape Machines с переключателем типа магнитофона в фиолетовом круге',
+    alt: 'На крупном плане Slate Digital Virtual Tape Machines справа выделен фиолетовым кругом переключатель типа магнитофона, слева виден переключатель Bias.',
     prototype: 'Studer A827 и A80 RC',
     url: 'https://support.slatedigital.com/hc/en-us/articles/115011299328-Virtual-Tape-Machines',
   },
   microshift: {
-    alt: 'Плагин Soundtoys MicroShift с тремя переключателями режимов и ручками настройки по краям',
+    alt: 'На тёмной панели Soundtoys MicroShift три светлые кнопки выбора режима стоят в центре, а ручки настройки расположены по обе стороны.',
     prototype: 'Eventide H3000 и AMS DMX 15-80s',
     url: 'https://www.soundtoys.com/product/microshift/',
   },
   crystallizer: {
-    alt: 'Плагин Soundtoys Crystallizer с рядами регуляторов и зелёными индикаторами уровня справа',
+    alt: 'На тёмной панели Soundtoys Crystallizer в деревянной рамке основной ряд круглых ручек расположен в центре, зелёные индикаторы уровней — справа.',
     prototype: 'Алгоритм Reverse Shift процессора Eventide H3000',
     url: 'https://www.soundtoys.com/product/crystallizer/',
   },
   superplate: {
-    alt: 'Ревербератор Soundtoys SuperPlate с крупной круглой шкалой в центре и индикаторами справа',
+    alt: 'На тёмной панели Soundtoys SuperPlate в деревянной рамке выделена большая круглая шкала с красной разметкой. Справа от неё видны ручки и зелёные индикаторы.',
     prototype: 'EMT 140, EMT 240, Audicon, Stocktronics RX4000 и EcoPlate III',
     url: 'https://www.soundtoys.com/product/superplate/',
   },
   'soundtoys-color-and-echo': {
-    alt: 'Панели двух плагинов Soundtoys Color & Echo, Decapitator со стрелочным индикатором и EchoBoy с зелёным дисплеем',
+    alt: 'Коллаж Soundtoys Color & Echo показывает две тёмные панели в деревянных рамках: Decapitator со светлым стрелочным индикатором и EchoBoy с зелёной шкалой.',
   },
   'waves-classic-dynamics': {
-    alt: 'Панели двух компрессоров Waves Classic Dynamics, CLA-2A и CLA-76, со стрелочными индикаторами',
+    alt: 'Коллаж Waves Classic Dynamics объединяет светлый CLA-2A с центральным стрелочным индикатором и две версии CLA-76: светлую с синей полосой и чёрную.',
   },
 };
 const money = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -671,7 +671,7 @@ if (productName) {
         '.';
       addButton.textContent = 'Добавить бандл в корзину +';
       specs.innerHTML =
-        '<h2>Состав бандла</h2><ul class="bundle-contents">' +
+        '<h2 id="specs-title">Состав бандла</h2><ul class="bundle-contents">' +
         plugins
           .map(
             (plugin) =>
@@ -703,14 +703,14 @@ if (productName) {
           )
           .join('');
         specs.innerHTML =
-          '<h2 id="specs-title">Характеристики</h2><div class="table-wrapper" role="region" aria-labelledby="specs-title" tabindex="0"><table class="product-table gear-specs"><caption class="sr-only"></caption><tbody>' +
+          '<h2 id="specs-title">Характеристики</h2><div class="table-wrapper" role="region" aria-label="Таблица характеристик" tabindex="0"><table class="product-table gear-specs"><caption class="sr-only"></caption><tbody>' +
           rows +
           '</tbody></table></div>';
         specs.querySelector('caption').textContent = 'Характеристики ' + name;
       } else {
         description.textContent = 'Программная эмуляция студийного оборудования.';
         specs.innerHTML =
-          '<h2>Аппаратный прототип</h2><p class="brand-product-note">' +
+          '<h2 id="specs-title">Аппаратный прототип</h2><p class="brand-product-note">' +
           detail.prototype +
           '.</p><p>Требования к системе, совместимость и условия лицензии указаны у производителя.</p>';
       }
@@ -721,6 +721,7 @@ if (productName) {
         category === 'hardware' ? 'Характеристики у производителя' : 'Документация производителя';
       specs.append(reference);
     }
+    specs.setAttribute('aria-labelledby', 'specs-title');
   }
 }
 const orderForm = document.querySelector('#order-form');

@@ -24,13 +24,13 @@
     />
     <meta
       property="og:image:alt"
-      content="Синтезатор Korg minilogue xd в чёрном корпусе, с клавиатурой и регуляторами на верхней панели"
+      content="Чёрный синтезатор Korg minilogue xd показан под углом: впереди белые и чёрные клавиши, на наклонной панели видны ряды регуляторов и переключателей."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <script src="js/main.js?v=seo" defer></script>
+    <script src="js/main.js?v=descriptive-alt" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
@@ -134,7 +134,8 @@
             <p></p>
             <div class="product-detail__price" id="product-price"></div>
             <div class="product-detail__actions">
-              <button class="button" id="product-add">Добавить в корзину +</button
+              <button class="button" id="product-add" aria-describedby="product-note">
+                Добавить в корзину +</button
               ><button
                 class="button button--outline"
                 id="product-favorite"
