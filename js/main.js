@@ -238,6 +238,7 @@ const PRODUCTS = [
 ];
 const PRODUCT_DETAILS = {
   "korg-minilogue-xd": {
+    alt: "Синтезатор Korg minilogue xd в чёрном корпусе, с клавиатурой и регуляторами на верхней панели",
     "url": "https://www.korg.com/us/products/synthesizers/minilogue_xd/",
     "specs": [
       [
@@ -259,6 +260,7 @@ const PRODUCT_DETAILS = {
     ]
   },
   "arturia-minifreak": {
+    alt: "Синтезатор Arturia MiniFreak с мини-клавиатурой и оранжевыми ручками управления",
     "url": "https://www.arturia.com/products/hardware-synths/minifreak/details",
     "specs": [
       [
@@ -280,6 +282,7 @@ const PRODUCT_DETAILS = {
     ]
   },
   "yamaha-reface-cs": {
+    alt: "Синтезатор Yamaha reface CS в белом корпусе с мини-клавиатурой и рядом ползунков",
     "url": "https://au.yamaha.com/en/musical-instruments/keyboards/explore/synth-chronology/modal/Modal-reface-cs.html",
     "specs": [
       [
@@ -301,6 +304,7 @@ const PRODUCT_DETAILS = {
     ]
   },
   "novation-bass-station-ii": {
+    alt: "Синтезатор Novation Bass Station II с мини-клавиатурой и синей полосой над клавишами",
     "url": "https://novationmusic.com/products/bass-station-ii",
     "specs": [
       [
@@ -322,6 +326,7 @@ const PRODUCT_DETAILS = {
     ]
   },
   "roland-juno-x": {
+    alt: "Синтезатор Roland JUNO-X с клавиатурой и цветными секциями ползунков на панели управления",
     "url": "https://www.roland.com/global/products/juno-x/",
     "specs": [
       [
@@ -343,6 +348,7 @@ const PRODUCT_DETAILS = {
     ]
   },
   "sequential-take-5": {
+    alt: "Синтезатор Sequential Take 5 с клавиатурой и рядами круглых регуляторов на серой панели",
     "url": "https://sequential.com/hybrid-analog/take-5-compact-polysynth/",
     "specs": [
       [
@@ -364,48 +370,65 @@ const PRODUCT_DETAILS = {
     ]
   },
   "cla-2a": {
+    alt: "Компрессор Waves CLA-2A со светлой панелью, двумя крупными регуляторами и стрелочным индикатором",
     "prototype": "Teletronix LA-2A",
     "url": "https://www.waves.com/plugins/cla-2a-compressor-limiter"
   },
   "virtual-buss-compressors": {
+    alt: "Три панели компрессоров Slate Digital Virtual Buss Compressors со стрелочными индикаторами",
     "prototype": "Шинный компрессор SSL 4000 в модели FG-Grey",
     "url": "https://slatedigital.com/virtual-buss-compressors/"
   },
   "decapitator": {
+    alt: "Плагин Soundtoys Decapitator с крупным стрелочным индикатором и регулятором Drive слева",
     "prototype": "Ampex 350, Neve 1057 и Thermionic Culture Vulture",
     "url": "https://store.soundtoys.com/wp-content/uploads/Decapitator-Manual.pdf"
   },
   "echoboy": {
+    alt: "Плагин Soundtoys EchoBoy с зелёным дисплеем и отдельными блоками управления задержкой",
     "prototype": "Roland RE-201 Space Echo, Echoplex EP-3 и Ampex ATR-102",
     "url": "https://store.soundtoys.com/wp-content/uploads/EchoBoy-Manual.pdf"
   },
   "valhalla-delay": {
+    alt: "Плагин Valhalla Delay с синими секциями и ручками параметров задержки",
     "prototype": "Режим Space моделирует Roland RE-201 и RE-301",
     "url": "https://valhalladsp.com/shop/delay/valhalladelay/"
   },
   "cla-76": {
+    alt: "Две панели компрессора Waves CLA-76, светлая Blue Stripe и тёмная Blackface, со стрелочными индикаторами",
     "prototype": "1176 в вариантах Blue Stripe и Blackface",
     "url": "https://www.waves.com/bundles/cla-classic-compressors"
   },
   "verbsuite-classics": {
+    alt: "Ревербератор Slate Digital VerbSuite Classics с тёмной панелью и круглым регулятором в центре",
     "prototype": "Студийные ревербераторы, в том числе Bricasti M7",
     "url": "https://docs.slatedigital.com/VSC/VerbSuite_Classics.html"
   },
   "virtual-tape-machines": {
+    alt: "Панель Slate Digital Virtual Tape Machines с переключателем типа магнитофона в фиолетовом круге",
     "prototype": "Studer A827 и A80 RC",
     "url": "https://support.slatedigital.com/hc/en-us/articles/115011299328-Virtual-Tape-Machines"
   },
   "microshift": {
+    alt: "Плагин Soundtoys MicroShift с тремя переключателями режимов и ручками настройки по краям",
     "prototype": "Eventide H3000 и AMS DMX 15-80s",
     "url": "https://www.soundtoys.com/product/microshift/"
   },
   "crystallizer": {
+    alt: "Плагин Soundtoys Crystallizer с рядами регуляторов и зелёными индикаторами уровня справа",
     "prototype": "Алгоритм Reverse Shift процессора Eventide H3000",
     "url": "https://www.soundtoys.com/product/crystallizer/"
   },
   "superplate": {
+    alt: "Ревербератор Soundtoys SuperPlate с крупной круглой шкалой в центре и индикаторами справа",
     "prototype": "EMT 140, EMT 240, Audicon, Stocktronics RX4000 и EcoPlate III",
     "url": "https://www.soundtoys.com/product/superplate/"
+  },
+  "soundtoys-color-and-echo": {
+    alt: "Панели двух плагинов Soundtoys Color & Echo, Decapitator со стрелочным индикатором и EchoBoy с зелёным дисплеем"
+  },
+  "waves-classic-dynamics": {
+    alt: "Панели двух компрессоров Waves Classic Dynamics, CLA-2A и CLA-76, со стрелочными индикаторами"
   }
 };
 const money = n => new Intl.NumberFormat('ru-RU').format(n)+' ₽';
@@ -430,7 +453,19 @@ function save(){try{localStorage.setItem('freq-cart',JSON.stringify(cart))}catch
 function renderCart(){updateDeliveryField();const count=Object.values(cart).reduce((s,q)=>s+q,0);document.querySelectorAll('.cart-count').forEach(x=>x.textContent=count);const rows=Object.entries(cart).map(([id,q])=>{const p=find(id);return `<div class="cart-row"><div><strong>${p[0]}</strong><small>${itemPrice(p)} × ${q}</small></div><div class="cart-row__controls"><button class="icon-button" data-minus="${id}" aria-label="Уменьшить количество ${p[0]}">−</button><span>${q}</span><button class="icon-button" data-plus="${id}" aria-label="Увеличить количество ${p[0]}">+</button><button class="icon-button" data-remove="${id}" aria-label="Удалить ${p[0]}">×</button></div></div>`}).join('')||'<p class="empty-state">Ваша корзина пуста.<br>Выберите аппаратуру или плагины в каталоге.</p>';document.querySelector('#cart-items').innerHTML=rows;document.querySelector('#cart-total').textContent=money(total());const checkout=document.querySelector('#checkout');checkout.hidden=!count;const order=document.querySelector('#order-items');if(order)order.innerHTML=rows+`<div class="modal__total">Итого <strong>${money(total())}</strong></div>`;}
 function add(id){if(!find(id))return;if((cart[id]||0)>=99){toast('Максимум 99 единиц');return}cart[id]=(cart[id]||0)+1;save();animateFeedback(document.querySelector('.cart-count'));toast(find(id)[0]+' добавлен в корзину')}
 const dialog=document.querySelector('#cart-dialog');document.addEventListener('click',e=>{const addButton=e.target.closest('[data-add]');if(addButton)add(addButton.dataset.add);if(e.target.closest('[data-cart]'))dialog.showModal();if(e.target.closest('[data-close]'))dialog.close();for(const action of ['minus','plus','remove']){const b=e.target.closest('[data-'+action+']');if(!b)continue;const id=b.dataset[action];if(action==='plus'){add(id);return}if(action==='remove'||cart[id]<=1)delete cart[id];else cart[id]--;save()}});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
-const menu=document.querySelector('.menu-button');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',open);document.querySelector('.nav').classList.toggle('nav--open',open)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.setAttribute('aria-expanded','false');document.querySelector('.nav').classList.remove('nav--open')}});
+const menu = document.querySelector('.menu-button');
+const navigation = document.querySelector('#navigation');
+function setMenuOpen(open) {
+  menu.setAttribute('aria-expanded', String(open));
+  menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  navigation.classList.toggle('nav--open', open);
+}
+menu.addEventListener('click', () => setMenuOpen(menu.getAttribute('aria-expanded') === 'false'));
+document.addEventListener('keydown', event => {
+  if (event.defaultPrevented || event.key !== 'Escape' || menu.getAttribute('aria-expanded') !== 'true') return;
+  if (navigation.contains(document.activeElement)) menu.focus();
+  setMenuOpen(false);
+});
 const grid = document.querySelector('#catalog-grid');
 if (grid) {
   const params = new URLSearchParams(location.search);
@@ -488,7 +523,7 @@ if (grid) {
     showMore.hidden = shown >= matched.length;
     visibleCount.textContent = 'Показано: ' + shown + ' из ' + matched.length;
     if (moveFocus) {
-      batch[0]?.querySelector('.product-card__title')?.focus({ preventScroll: true });
+      batch[0]?.querySelector('.product-card__title')?.focus();
       if (!reducedMotion.matches) {
         batch.slice(0, 6).forEach((card, index) => card.animate?.(
           [{ opacity: 0, translate: '0 8px' }, { opacity: 1, translate: '0 0' }],
@@ -572,9 +607,10 @@ if (productName) {
     if (category === 'bundle') {
       const plugins = items.map(find);
       const separateTotal = plugins.reduce((sum, plugin) => sum + plugin[3], 0);
-      art.innerHTML = '<div class="bundle-art bundle-art--' + plugins.length + '" aria-hidden="true">'
+      art.innerHTML = '<div class="bundle-art bundle-art--' + plugins.length + '" role="img">'
         + plugins.map(plugin => '<img src="images/' + plugin[9] + '" alt="">').join('')
         + '</div>';
+      art.firstElementChild.setAttribute('aria-label', detail.alt);
       description.nextElementSibling.textContent = 'Бандл добавляется в корзину одной позицией. По отдельности плагины стоят '
         + money(separateTotal) + '.';
       addButton.textContent = 'Добавить бандл в корзину +';
@@ -588,14 +624,15 @@ if (productName) {
       frame.className = category === 'hardware' ? 'plugin-photo plugin-photo--hardware' : 'plugin-photo';
       const img = document.createElement('img');
       img.src = 'images/' + image;
-      img.alt = (category === 'hardware' ? 'Фото ' : 'Интерфейс ') + name;
+      img.alt = detail.alt;
       frame.append(img);
       art.replaceChildren(frame);
 
       if (category === 'hardware') {
         const rows = detail.specs.map(([label, value]) => '<tr><th scope="row">' + label + '</th><td>' + value + '</td></tr>').join('');
-        specs.innerHTML = '<h2>Характеристики</h2><div class="table-wrapper" role="region" aria-label="Характеристики синтезатора" tabindex="0"><table class="product-table gear-specs"><tbody>'
+        specs.innerHTML = '<h2 id="specs-title">Характеристики</h2><div class="table-wrapper" role="region" aria-labelledby="specs-title" tabindex="0"><table class="product-table gear-specs"><caption class="sr-only"></caption><tbody>'
           + rows + '</tbody></table></div>';
+        specs.querySelector('caption').textContent = 'Характеристики ' + name;
       } else {
         description.textContent = 'Программная эмуляция студийного оборудования.';
         specs.innerHTML = '<h2>Аппаратный прототип</h2><p class="brand-product-note">' + detail.prototype
@@ -609,7 +646,51 @@ if (productName) {
     }
   }
 }
-const form=document.querySelector('#order-form');if(form){form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const el=document.querySelector('#form-success');el.hidden=false;el.textContent=total()>0?'Заявка сформирована на сумму '+money(total())+'. Данные никуда не отправлены. Корзина сохранена для дальнейшей проверки.':'Заявка на консультацию сформирована. Данные никуда не отправлены.';el.focus();form.reset()})}renderCart();
+const orderForm = document.querySelector('#order-form');
+if (orderForm) {
+  const success = document.querySelector('#form-success');
+  function showFieldError(field) {
+    const errorId = field.id + '-error';
+    let error = document.getElementById(errorId);
+    if (!error) {
+      error = document.createElement('p');
+      error.id = errorId;
+      error.className = 'field-error';
+      field.after(error);
+    }
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', errorId);
+    error.textContent = field.validity.patternMismatch && field.id === 'phone'
+      ? 'Введите телефон в формате +7 (999) 123-45-67.'
+      : field.validationMessage;
+  }
+
+  orderForm.addEventListener('invalid', event => {
+    success.hidden = true;
+    showFieldError(event.target);
+  }, true);
+  orderForm.addEventListener('input', event => {
+    const field = event.target;
+    if (field.getAttribute('aria-invalid') !== 'true') return;
+    if (!field.validity.valid) {
+      showFieldError(field);
+      return;
+    }
+    document.getElementById(field.id + '-error')?.remove();
+    field.removeAttribute('aria-invalid');
+    field.removeAttribute('aria-describedby');
+  });
+  orderForm.addEventListener('submit', event => {
+    event.preventDefault();
+    success.hidden = false;
+    success.textContent = total() > 0
+      ? 'Заявка сформирована на сумму ' + money(total()) + '. Данные никуда не отправлены. Корзина сохранена для дальнейшей проверки.'
+      : 'Заявка на консультацию сформирована. Данные никуда не отправлены.';
+    success.focus();
+    orderForm.reset();
+  });
+}
+renderCart();
 
 // Переход к поиску в каталоге через обычную GET-форму работает и без JavaScript.
 
