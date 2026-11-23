@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shaaayyy.github.io/kr3-responsive-shop/sitemap.xml
